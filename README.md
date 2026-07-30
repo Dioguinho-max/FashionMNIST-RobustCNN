@@ -1,15 +1,15 @@
-# My first Deep Learning project developed with PyTorch.
+# FashionMNIST-RobustCNN
 
-This project implements a Convolutional Neural Network (CNN) for image classification on the FashionMNIST dataset and explores a basic Out-of-Distribution (OOD) detection approach using confidence thresholding.
+A Convolutional Neural Network (CNN) developed with PyTorch for image classification on the FashionMNIST dataset. The project also explores a basic Out-of-Distribution (OOD) detection approach using softmax confidence thresholding.
 
 ---
 
 ## Features
 
-- Image classification using Convolutional Neural Networks
-- FashionMNIST classification
+- Convolutional Neural Network (CNN)
+- FashionMNIST image classification
 - Out-of-Distribution (OOD) detection
-- Data Augmentation
+- Data augmentation
 - Batch Normalization
 - Dropout regularization
 - Early Stopping
@@ -17,13 +17,13 @@ This project implements a Convolutional Neural Network (CNN) for image classific
 - Confusion Matrix
 - Classification Report
 - AUROC evaluation
-- Automatic CSV prediction generation
+- Prediction export to CSV
 
 ---
 
 ## Model Architecture
 
-```
+```text
 Input (28×28)
 
 ↓
@@ -72,7 +72,7 @@ Linear (64 → 10)
 
 ## Dataset
 
-### In-distribution
+### In-Distribution
 
 - FashionMNIST
 - 54,000 training images
@@ -83,7 +83,7 @@ Linear (64 → 10)
 - MNIST
 - 200 images used exclusively for OOD evaluation
 
-Datasets are automatically downloaded through `torchvision`.
+Datasets are automatically downloaded using `torchvision`.
 
 ---
 
@@ -112,6 +112,28 @@ Datasets are automatically downloaded through `torchvision`.
 | OOD Method | Softmax Confidence Threshold |
 | Evaluation Metrics | AUROC and Balanced Accuracy |
 
+### Training Curves
+
+![Training Curves](images/training_curves.png)
+
+Training and validation performance during model training.
+
+---
+
+### Confusion Matrix
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+Confusion matrix obtained on the validation dataset.
+
+---
+
+### OOD Confidence Distribution
+
+![OOD Distribution](images/ood_distribution.png)
+
+Confidence distributions for in-distribution and out-of-distribution samples.
+
 ---
 
 ## Technologies
@@ -125,10 +147,34 @@ Datasets are automatically downloaded through `torchvision`.
 
 ---
 
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Dioguinho-max/FashionMNIST-RobustCNN.git
+cd FashionMNIST-RobustCNN
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the notebook or the Python script.
+
+---
+
 ## Repository Structure
 
-```
-CNN-FashionMNIST-OOD/
+```text
+FashionMNIST-RobustCNN/
+│
+├── images/
+│   ├── training_curves.png
+│   ├── confusion_matrix.png
+│   └── ood_distribution.png
 │
 ├── model.py
 ├── melhor_modelo.pth
@@ -153,11 +199,11 @@ CNN-FashionMNIST-OOD/
 
 ## About
 
-This repository contains my first Deep Learning project using PyTorch.
+This repository contains my first Deep Learning project built with PyTorch.
 
-The objective was to understand the complete workflow of training a convolutional neural network, including data preprocessing, regularization techniques, model evaluation, and basic Out-of-Distribution detection.
+The objective was to understand the complete deep learning workflow, including data preprocessing, CNN design, regularization techniques, model evaluation, and basic Out-of-Distribution detection.
 
-Although developed as a learning project, it follows good deep learning practices such as early stopping, learning rate scheduling, Batch Normalization, dropout regularization, and comprehensive evaluation metrics.
+Although developed as a learning project, it follows several good deep learning practices such as Batch Normalization, Dropout, Early Stopping, Learning Rate Scheduling, and comprehensive evaluation metrics.
 
 ---
 
