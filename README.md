@@ -130,7 +130,7 @@ Datasets are automatically downloaded through `torchvision`.
 ```
 CNN-FashionMNIST-OOD/
 │
-├── CNN_FashionMNIST_OOD.ipynb
+├── model.py
 ├── melhor_modelo.pth
 ├── predicoes.csv
 ├── requirements.txt
